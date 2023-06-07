@@ -5,23 +5,23 @@ console.log(galleryItems);
 
 const fullGallery = document.querySelector('.gallery');
 console.log(fullGallery);
-fullGallery.addEventListener
+// fullGallery.addEventListener
 const createFullGallery = galleryItems.map(({preview, original,description}) =>
     `<li>
-    <img src="${preview}" alt="${description}" width = 300>
+    <img src="${preview}" alt="${description}" class = "gallery__item gallery__image" width = 300>
     </li>`
 )
-fullGallery.insertAdjacentHTML('beforebegin', createFullGallery);
+fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
 
 // import * as basicLightbox from 'basiclightbox'
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
-    </div>
-`)
+// const instance = basicLightbox.create(`
+//     <div class="modal">
+//         <p>
+//             Your first lightbox with just a few lines of code.
+//             Yes, it's really that simple.
+//         </p>
+//     </div>
+// `)
 
-instance.show()
+// instance.show()
