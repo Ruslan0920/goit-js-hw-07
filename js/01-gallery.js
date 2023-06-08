@@ -8,7 +8,7 @@ console.log(fullGallery);
 // 
 const createFullGallery = galleryItems.map(({preview, original,description}) =>
     `<li class = "gallery__item">
-    <img class = "gallery__image" src="${preview}" alt="${description}"  width = 300>
+    <img class = "gallery__image gallery__link" src="${preview}" alt="${description}">
     </li>`
 )
 fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
@@ -24,13 +24,24 @@ function onClick(event) {
 
 // import * as basicLightbox from 'basiclightbox'
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
-    </div>
-`)
+const instance = basicLightbox.create(
+    `<div class="modal">
+       
+    <img  class = "gallery__image gallery__link" src="${createFullGallery.original}" alt="${createFullGallery.description}">
+  
+    </div>`
+)
 
-instance.show()
+instance.show();
+console.log(instance);
+
+
+
+// import * as basicLightbox from 'basiclightbox'
+
+// const instance = basicLightbox.create(`
+//     <img src="assets/images/image.png" width="800" height="600">
+// `)
+
+// instance.show()
+
