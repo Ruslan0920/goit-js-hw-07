@@ -6,34 +6,39 @@ console.log(galleryItems);
 const fullGallery = document.querySelector('.gallery');
 console.log(fullGallery);
 // 
-const createFullGallery = galleryItems.map(({preview, original,description}) =>
+const createFullGallery = galleryItems.map(({preview, original, description}) =>
     `<li class = "gallery__item">
-    <img class = "gallery__image gallery__link" src="${preview}" alt="${description}">
+    <a class = "gallery__link" href="${original}">
+    <img class = "gallery__image" src="${preview}" data-source="${original}" alt="${description}">
+    </a>
     </li>`
+
 )
 fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
 fullGallery.addEventListener('click', onClick);
 
 function onClick(event) {
+    event.preventDefault();
     // console.log(event.target);
     if (!event.target.classList.contains('gallery__image')) {
         return;
     }
-        console.log(event.target);
+    // console.log(event.target.currentSrc);
+    
+    const instance = basicLightbox.create(
+    `<img  class = "gallery__link" src="${event.target.currentSrc}" alt="${createFullGallery.description}">`
+)
+
+    instance.show();
+    // event. preventDefault()
 }
+
+// console.log(createFullGallery);
 
 // import * as basicLightbox from 'basiclightbox'
 
-const instance = basicLightbox.create(
-    `<div class="modal">
-       
-    <img  class = "gallery__image gallery__link" src="${createFullGallery.original}" alt="${createFullGallery.description}">
-  
-    </div>`
-)
 
-instance.show();
-console.log(instance);
+
 
 
 
