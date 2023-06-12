@@ -24,16 +24,16 @@ function onClick(event) {
 
 // import * as basicLightbox from 'basiclightbox'
 
-const instance = basicLightbox.create(
-    `<div class="modal">
+// const instance = basicLightbox.create(
+//     `<div class="modal">
        
-    <img  class = "gallery__image gallery__link" src="${createFullGallery.original}" alt="${createFullGallery.description}">
+//     <img  class = "gallery__image gallery__link" src="${createFullGallery.original}" alt="${createFullGallery.description}">
   
-    </div>`
-)
+//     </div>`
+// )
 
-instance.show();
-console.log(instance);
+// instance.show();
+// console.log(instance);
 
 
 
