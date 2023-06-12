@@ -27,11 +27,20 @@ function onClick(event) {
     }
     // console.log(event.target.dataset.source);
     // console.log(event.target.alt);
+    window.addEventListener('keydown', pressEsc)
     
     const instance = basicLightbox.create(
     `<img src="${event.target.dataset.source}" alt="${event.target.alt}">`
 )
     instance.show();
 
-    
+    function pressEsc(event) {
+        console.log(event);
+        closeModal();
+        function closeModal() {
+        instance.remove('div.basicLightbox')
+    }
+
+    }
+
 }
