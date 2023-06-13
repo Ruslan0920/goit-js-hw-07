@@ -27,20 +27,24 @@ function onClick(event) {
     }
     // console.log(event.target.dataset.source);
     // console.log(event.target.alt);
-    window.addEventListener('keydown', pressEsc)
+    
     
     const instance = basicLightbox.create(
     `<img src="${event.target.dataset.source}" alt="${event.target.alt}">`
 )
     instance.show();
+    console.log(instance);
+
+    window.addEventListener('keydown', pressEsc);
 
     function pressEsc(event) {
-        console.log(event);
-        closeModal();
-        function closeModal() {
-        instance.remove('div.basicLightbox')
+        console.log(event.keyCode);
+        if (event.keyCode === 27)
+            console.log(event);
+            // event.remove()
+        // closeModal();
     }
-
-    }
-
+// function closeModal() {
+//         instance.remove()
+//     }
 }
