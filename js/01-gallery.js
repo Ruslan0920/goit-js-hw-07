@@ -28,9 +28,7 @@ function onClick(event) {
     const instance = basicLightbox.create(
     `<img src="${newTarget.dataset.source}" alt="${newTarget.alt}">`
 )
-    instance.show();
-
-    window.addEventListener('keydown', pressEsc);
+    instance.show(window.addEventListener('keydown', pressEsc));
 
     function pressEsc(event) {
         // console.log(event);
