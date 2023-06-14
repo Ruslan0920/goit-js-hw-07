@@ -20,7 +20,7 @@ fullGallery.addEventListener('click', onClick);
 function onClick(event) {
     event.preventDefault();
     const newTarget = event.target;
-    console.log(newTarget);
+
     if (!newTarget.classList.contains('gallery__image')) {
         return;
     }
@@ -33,7 +33,8 @@ function onClick(event) {
     window.addEventListener('keydown', pressEsc);
 
     function pressEsc(event) {
+        // console.log(event);
         if (event.keyCode === 27)
-            instance.close()
+            instance.close(window.removeEventListener('keydown', pressEsc))
     }
 }
