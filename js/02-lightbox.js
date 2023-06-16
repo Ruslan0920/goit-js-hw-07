@@ -25,4 +25,5 @@ function onClick(event) {
     if (!newTarget.classList.contains('gallery__image')) {
         return;
     }
+
 }
