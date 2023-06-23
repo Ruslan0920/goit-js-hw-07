@@ -6,7 +6,7 @@ console.log(galleryItems);
 const fullGallery = document.querySelector('.gallery');
 
 const createFullGallery = galleryItems.map(({ preview, original, description }) =>
-    `<li uk-lightbox class = "gallery__item">
+    `<li class = "gallery__item">
     <a class = "gallery__link" href="${original}">
     <img class = "gallery__image"
         src="${preview}"
@@ -27,3 +27,7 @@ function onClick(event) {
     }
 
 }
+
+new SimpleLightbox('.gallery__item a', {})
+
+console.log(SimpleLightbox);
