@@ -1,16 +1,16 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 const fullGallery = document.querySelector('.gallery');
 
 const createFullGallery = galleryItems.map(({ preview, original, description }) =>
     `<li class = "gallery__item">
-    <a class = "gallery__link" data-alt="${description}"href="${original}">
+    <a class = "gallery__link" href="${original}">
     <img class = "gallery__image"
         src="${preview}"
-        data-alt="${description}">
+        alt="${description}">
     </a>
     </li>`
 );
@@ -28,6 +28,6 @@ function onClick(event) {
 
 }
 
-new SimpleLightbox('.gallery__item a', {})
+new SimpleLightbox('.gallery__item a', { captionPosition: "bottom", captionsData:"alt", captionDelay: 250})
 
-console.log(SimpleLightbox);
+// console.log(SimpleLightbox);
