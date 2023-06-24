@@ -30,17 +30,16 @@ function onClick(event) {
     )
     // console.log(instance);
     
-    onShow: (instance) => {window.addEventListener('keydown', pressEsc)
-        console.log(instance);
-        console.log(onShow);
-    }
+    // onShow: (instance) => {window.addEventListener('keydown', pressEsc)
+    //     console.log(instance);
+    //     console.log(onShow);
+    // }
 
-    // instance.show(window.addEventListener('keydown', pressEsc));
+    instance.show(window.addEventListener('keydown', pressEsc));
 
     function pressEsc(event) {
         console.log(event);
         if (event.keyCode === 27)
-            // instance.close(window.removeEventListener('keydown', pressEsc))
-            return
+            instance.close(window.removeEventListener('keydown', pressEsc))
     }
 }
