@@ -16,17 +16,17 @@ const createFullGallery = galleryItems.map(({ preview, original, description }) 
 );
 
 fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
-fullGallery.addEventListener('click', onClick);
+// fullGallery.addEventListener('click', onClick);
 
-function onClick(event) {
-    event.preventDefault();
-    const newTarget = event.target;
+// function onClick(event) {
+//     event.preventDefault();
+//     const newTarget = event.target;
 
-    if (!newTarget.classList.contains('gallery__image')) {
-        return;
-    }
+//     if (!newTarget.classList.contains('gallery__image')) {
+//         return;
+//     }
 
-}
+// }
 
 new SimpleLightbox('.gallery__item a', { captionPosition: "bottom", captionsData:"alt", captionDelay: 250})
 
