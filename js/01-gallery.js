@@ -29,6 +29,13 @@ function onClick(event) {
     `<img src="${newTarget.dataset.source}" alt="${newTarget.alt}">`
     )
     // console.log(instance);
+
+    // const openModalWindow = instance.show {
+    //     onShow: (instance) => {window.addEventListener('keydown', pressEsc)
+    // }
+    // console.log(instance);
+
+    // console.log(instance);
     
     // onShow: (instance) => {window.addEventListener('keydown', pressEsc)
     //     console.log(instance);
@@ -38,7 +45,7 @@ function onClick(event) {
     instance.show(window.addEventListener('keydown', pressEsc));
 
     function pressEsc(event) {
-        console.log(event);
+        // console.log(event);
         if (event.keyCode === 27)
             instance.close(window.removeEventListener('keydown', pressEsc))
     }
