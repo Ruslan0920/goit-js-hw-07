@@ -30,21 +30,19 @@ function onClick(event) {
     )
     // console.log(instance);
 
-    const openModalWindow = instance.show({ onShow: (instance) => { window.addEventListener('keydown', pressEsc) } })
+    const openModalWindow = instance.show({ onShow: (instance) => { instance.addEventListener('keydown', pressEsc) } })
     
         console.log(instance);
     console.log(openModalWindow);
     
-    // onShow: (instance) => {window.addEventListener('keydown', pressEsc)
-    //     console.log(instance);
-    //     console.log(onShow);
-    // }
+        // const closeModalWindow = instance.close({onClose: (instance) => {window.removeEventListener('keydown', pressEsc)}})
 
-//     instance.show(window.addEventListener('keydown', pressEsc));
+    // instance.show(window.addEventListener('keydown', pressEsc));
 
-//     function pressEsc(event) {
-//         // console.log(event);
-//         if (event.keyCode === 27)
-//             instance.close(window.removeEventListener('keydown', pressEsc))
-//     }
+    function pressEsc(event) {
+        console.log(event);
+        if (event.keyCode === 27)
+            // instance.close(window.removeEventListener('keydown', pressEsc))
+            return
+    }
 }
