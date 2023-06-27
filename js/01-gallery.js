@@ -26,23 +26,29 @@ function onClick(event) {
     }
     
     const instance = basicLightbox.create(
-    `<img src="${newTarget.dataset.source}" alt="${newTarget.alt}">`
+        `<img src="${newTarget.dataset.source}" alt="${newTarget.alt}">`,
+        {
+            onShow: (instance) => {window.addEventListener('keydown', pressEsc)},
+            onClose: (instance) => {window.removeEventListener('keydown', pressEsc)}
+        }
     )
-    // console.log(instance);
-
-    const openModalWindow = instance.show({ onShow: (instance) => { instance.addEventListener('keydown', pressEsc) } })
-    
-        console.log(instance);
-    console.log(openModalWindow);
-    
-        // const closeModalWindow = instance.close({onClose: (instance) => {window.removeEventListener('keydown', pressEsc)}})
-
-    // instance.show(window.addEventListener('keydown', pressEsc));
+    instance.show();
 
     function pressEsc(event) {
         console.log(event);
         if (event.keyCode === 27)
-            // instance.close(window.removeEventListener('keydown', pressEsc))
-            return
+            instance.close();
     }
+    
+
+// ---- НЕ ПРАВИЛЬНО ЗАПИСАНО, АЛЕ ПРАЦЮЄ)))) ----
+    
+    // instance.show(window.addEventListener('keydown', pressEsc));
+
+    // function pressEsc(event) {
+    //     console.log(event);
+    //     if (event.keyCode === 27)
+    //         instance.close(window.removeEventListener('keydown', pressEsc))
+
+    // }
 }
