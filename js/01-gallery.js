@@ -35,11 +35,11 @@ function onClick(event) {
     instance.show();
 
     function pressEsc(event) {
-        console.log(event);
+        // console.log(event);
         if (event.keyCode === 27)
             instance.close();
     }
-    
+
 
 // ---- НЕ ПРАВИЛЬНО ЗАПИСАНО, АЛЕ ПРАЦЮЄ)))) ----
     
